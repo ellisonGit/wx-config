@@ -1,0 +1,133 @@
+h3 {
+    text-align: center;
+    color: dodgerblue;
+    font-family: '微软雅黑', '宋体', sans-serif;
+    size: 13px;
+}
+
+.userPhoto {
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: -0.5rem auto 0;
+    float: left
+}
+
+.userPhoto img {
+    width: 4.4rem;
+    height: 4.4rem;
+}
+
+.demo1 {
+    margin-top: 3rem
+}
+
+.spanone {
+    display: block;
+    padding: 1% 2%;
+    font-size: 16px;
+}
+
+.botton {
+    text-align: center;
+    background: dodgerblue; /*#19b5ff;*/
+    color: #fff;
+    border-radius: 0.2rem;
+    line-height: 2rem;
+    height: 2rem;
+    width: 20%;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    float: left;
+    margin-left: 2rem;
+    position: relative;
+
+}
+
+.botton:active {
+    top: 5px; /**向下偏移2px **/
+}
+
+.details {
+    float: right;
+    margin-top: -4rem
+}
+
+a {
+    text-decoration: none
+}
+
+.imgsize {
+    width: 1.3rem;
+    height: 1.3rem;
+
+}
+
+hr {
+    background-color: silver;
+    height: 1px;
+    border: none;
+
+}
+
+.inputc {
+    width: 5.3rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.inputtwo {
+    width: 5.3rem;
+    /*	visibility: hidden;*/
+}
+
+.tabb {
+    border: 1px solid rgba(116, 107, 128, 0.45);
+    width: 100%;
+    height: 10px;
+}
+
+.tabbb {
+    border: 1px  solid rgba(116, 107, 128, 0.45);
+    width: 100%;
+    height: 10px;
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+}
+
+/*.tabtwo {
+    border: 1px solid rgba(116, 107, 128, 0.45);
+    width: 100%;
+    height: 10px;
+}*/
+
+
+td {
+    border: 1px solid rgba(116, 107, 128, 0.45);
+    text-align: center;
+    border-collapse: collapse;
+
+}
+
+.tab {
+    margin-top: 2rem;
+    overflow: scroll;
+    height: 80%;
+}
+
+.submit {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.tijao {
+    text-align: center;
+    width: 20%;
+}
+
+.inp {
+    border: none;
+    width: 80%;
+}
+.btninput{
+    width: 20%;
+}

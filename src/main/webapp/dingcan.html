@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<head>
+<title>订餐服务</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+<!-- head 中 -->
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script> -->
+<style>
+html{
+	overflow-y:hidden;background-color:#ffffff;
+}
+
+
+.my_flex .left{
+	flex:1;
+	height:3rem;
+	line-height:3rem;
+}
+
+.my_flex .left img{
+	width:3rem;
+	height:3rem;
+	border-radius:50%;
+}
+
+.my_flex .right{
+	flex:4;
+//	text-indent:-0.3rem;
+}
+
+
+.my_tab .left{
+	width:50%;display:inline;float:left;
+	text-align:center;
+	border-bottom:1px solid #e4e4e4;
+}
+
+
+
+.my_tab .left  a , .my_tab .right a ,.my_tab .middle  a {
+	width:70%;display:block;
+	color:rgb(102,102,102);
+	padding:.5rem 0;margin:0 auto;
+	border-bottom:3px solid #ffffff;
+}
+
+.my_tab .left  a.on , .my_tab .right a.on, .my_tab .middle a.on{
+	color:rgb(6,195,5);
+	border-bottom:3px solid rgb(6,195,5);
+}
+
+
+.my_condition{
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	background-color:rgb(246,246,246);padding:.4rem 0;
+}
+
+.my_condition .item1{
+	flex:1;padding-left:.6rem;
+}
+
+.my_condition .item1 ion-icon{
+	font-size:2rem;
+}
+
+.my_condition .item1 img{
+	width:50%;
+}
+
+.my_condition .item2{
+	flex:3
+}
+
+#rili , #kaoqin_riqi{
+	font-size:16px;border:none;background:none;font-weight:700;
+}
+
+.my_condition .item2 span{
+	font-weight:700;
+}
+
+.my_condition .item3{
+	flex:1;padding-right:.6rem;
+	text-align: right;
+}
+.my_condition .item3 ion-icon{
+	width:50%;font-size:2rem;
+}
+.my_condition .item3 img{
+	width:50%;float:right;
+}
+
+
+
+.hide{
+	display:none;
+}
+
+
+.yue span{
+	font-size:1.3rem;color:rgb(158,158,158);
+}
+.yue h2{
+	font-size:2rem;line-height:2.5rem;color:rgb(18,200,115);text-align:center;
+}
+
+.shaixuan .my_yue{
+	flex:2;padding-left:.6rem;
+}
+.shaixuan .my_yue span{
+	font-size:1.1rem;
+}
+.shaixuan .fenlei{
+	flex:1;
+	/** padding-left:.6rem; **/
+	text-align:right;
+	padding-right:.6rem;
+	position:relative;
+}
+
+
+
+
+
+.monthInfo .left span{
+	font-weight:700;
+}
+.monthInfo .left text{
+	color:rgb(151,151,151);font-size:15px;
+}
+
+
+.monthInfo .right ion-icon{
+	 flex:1;font-size:2rem;
+}
+
+
+
+
+
+
+.xiaofei_word1 text{
+	color:rgb(151,151,151);font-size:15px;
+}
+
+
+
+.xiaofei_word2 span{
+	font-size:20px;
+}
+
+.fa-calendar-alt , .fa-clock{
+	font-size:1.5rem;
+}
+
+
+#xialalan li{
+	list-style: none;
+	display: block;
+    vertical-align: top;
+    letter-spacing: normal;
+	background-color:#ffffff;
+	border:1px solid #e4e4e4;
+	width:3rem;padding:.3rem ;
+}
+
+#xialalan li a{
+	text-decoration:none;color:rgb(18,200,115);display:block;
+}
+
+
+</style>
+
+</head>
+<body ontouchstart>
+ 
+
+<!-- 出入记录 start -->
+<div id="tab1" class="hide">
+
+	<!-- 数据筛选条件 -->
+	<div class="my_condition">
+	
+		<div class="item1">
+			<i class="far fa-clock"></i>
+		</div>
+		
+		<div class="item2">
+			<span>本月</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span><button id="rili" value="2019 02">2019-07-02</button></span>
+		</div>
+
+		<div class="item3">
+			<label for="rili">
+				<i class="far fa-calendar-alt"></i>
+			</label>
+		</div>
+	</div>
+<>
+
+	<div class="demo1">
+		<h5><input type="checkbox" id="all" /><label>全选选项</label></h5>
+		<p><input type="checkbox" name="item" /><label>中餐</label></p>
+		<p><input type="checkbox" name="item" /><label>晚餐</label></p>
+		<p><input type="checkbox" name="item" /><label>次日早餐</label></p>
+
+	</div>
+	<div align="center" style="margin: 12px 12px;">
+		<button id="sure" type="button" class="mui-btn mui-btn-blue mui-btn-block" style="font-size: 100%;">确定</button>
+		<button id="no" type="button" class="mui-btn mui-btn-blue mui-btn-block" style="font-size: 100%;">退餐</button>
+	</div>
+
+
+
+
+	
+
+</div>
+
+
+<style>
+.tanchukuang{
+	width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,0.5);z-index:999;
+	display:none;
+}
+.tanchukuang_inner{
+	width:100%;height:100%;
+}
+
+.tanchukuang_inner .top , .tanchukuang_inner .bottom{
+	width:100%;height:25%;clear:both;position:relative
+}
+
+.big_img{
+	width:100%;height:50%;overflow-x:scroll;overflow-y:hidden; 
+}
+.close{
+	position:absolute;bottom:5px;right:5px;line-height:34px;font-size:34px;color:#ffffff;font-weight:700;
+}
+
+.big_img img{
+	height:100%;width:auto;
+}
+</style>
+<div class="tanchukuang">
+	<div class="tanchukuang_inner">		
+		<div class="top" onClick="$('.tanchukuang').hide();">
+			<div class="close">×</div>
+		</div>
+		<div class="big_img">			
+			<img src="" />
+		</div>
+		<div class="bottom" onClick="$('.tanchukuang').hide();"></div>
+	</div>
+</div>
+
+</body>
+<!-- body 最后 -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-weui.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/common.js?id=002"></script>
+
+<script>
+	$("#sure").click(function(){
+		alert("提交成功！");
+	});
+	$("#no").click(function(){
+		confirm("确定要退餐吗？")
+	});
+	var input=document.getElementsByName('item');
+	console.log(input.length);
+	var all=document.getElementById('all');
+	all.onclick=function (arguments) {
+		for (var i = 0; i < input.length; i++) {
+			if(input[i].checked){
+				input[i].checked=false;
+			}else{
+				input[i].checked=true;
+			}
+		}
+	}
+
+
+	//判断是否页面有参数值，用于决定显示哪一个tab
+	var tabValue = getQueryString("t");
+	if(tabValue == null){
+		tabValue = 1;
+	}
+
+	//页码
+	var pageSize = 10;
+	//当前月份 yyyyMM
+	var month = getNowMonth();
+
+
+
+	var monthForButton = month.substr(0,4)+" "+month.substr(4,2);
+	$("#rili").val(monthForButton);
+	$("#month_value").val(monthForButton);
+
+	$("#rili").html(monthForButton.replace(" ","-")+"-02");
+
+	$("#month_value").html(monthForButton.replace(" ","-"));
+
+	//调用切换tab页方法
+	qiehuan(tabValue);
+
+
+	//loadYuE();
+
+
+	//切换tab页
+	function qiehuan(index){
+		for(var i=1;i<=2;i++){
+			$("#tiaojian"+i).removeClass("on");
+		}
+		$("#tiaojian"+index).addClass("on");
+
+		for(var i=1;i<=2;i++){
+			$("#tab"+i).addClass("hide");
+		}
+		$("#tab"+index).removeClass("hide");
+
+		//加载对应的tab数据
+
+		if(index == 1){
+
+		}else if(index == 2){
+
+		}
+
+
+
+	}
+
+	//tab2的中记录数
+	var totalCount2 = 0;
+	//tab2的下一页起始位置
+	var lastRecordNum2 = 0;
+	//记录tab2的滚动状态
+	var tab2ScrollStatus = 0;
+
+	//data_list2的滚动事件
+	$("#data_list2").scroll(function(){
+		var nScrollHight = $(this)[0].scrollHeight;
+		var nScrollTop = $(this)[0].scrollTop;
+		var nDivHight = $(this).height();
+
+		if(nScrollTop + nDivHight >= nScrollHight){
+			if(tab2ScrollStatus == 1){
+				return ;
+			}
+			tab2ScrollStatus = 1;
+			$("#load_more2").removeClass("hide");
+			if(totalCount2 <= lastRecordNum2){
+				$("#load_more2").addClass("hide");
+				$("#no_more2").removeClass("hide");
+				return;
+			}
+
+			setTimeout(function(){
+
+				tab2ScrollStatus = 0;
+			},500);
+		}
+	});
+
+
+	//初始化日历选择器
+	$("#rili").picker({
+        title: "选择月份",		
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['2018', '2019']
+          },
+          {
+            textAlign: 'center',
+            values: ['01', '02', '03', '04', '05', '06','07','08','09','10','11','12']
+          }
+
+        ],		
+		onClose: function(p) {
+		   var result = p.value[0]+","+p.value[1];
+		   var newMonth = result.replace(",","-");
+		   
+           $("#rili").html(newMonth);		   
+		   var paramMonth = result.replace(",","");
+		   
+
+
+
+		   tab1ScrollStatus = 0;
+        }
+    }); 
+	
+	//初始化日历选择器
+	$("#month_value").picker({
+        title: "选择月份",		
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['2018', '2019']
+          },
+          {
+            textAlign: 'center',
+            values: ['01', '02', '03', '04', '05', '06','07','08','09','10','11','12']
+          }
+        ],		
+		onClose: function(p) {
+		   var result = p.value[0]+","+p.value[1];
+		   var newMonth = result.replace(",","-");
+		   
+           $("#month_value").html(newMonth);
+		   var paramMonth = result.replace(",","-");
+
+
+		   tab2ScrollStatus = 0;
+        }
+    });
+	
+
+
+
+
+
+</script>
+</html>
