@@ -2,7 +2,9 @@ package com.hnjca.wechat.dao;
 
 import com.hnjca.wechat.pojo.Meal;
 import com.hnjca.wechat.pojo.YYTest;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,5 +23,5 @@ public interface MealDao {
 
     String selectValue(String userid);
 
-    int updateMeal(String userid,String value);
+    int updateMeal(@Param("userid") String userid, @Param("value")String value, @Param("updatetime")Date updatetime);
 }

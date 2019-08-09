@@ -63,18 +63,25 @@ function fSetDate(iYear,iMonth,iDay){
     if(iDayNew.length<2){  
         iDayNew="0"+iDayNew;  
     }
+
+    //ellison s
     riqiValue= gdCtrl.value=iYear+splitChar+iMonthNew+splitChar+iDayNew;
     //alert("sdf:"+riqiValue );
 
      s=riqi.value;//开始时间
-    var subD=getDateByTimeStr(s);//字符转日期类型
-    if(subD<new Date(currentDateStart.replace(/-/g, '/'))){
-        alert("选择不能小于当前日期！");
-    }else{
     var e=riqitwo.value;//结束时间
+    var subD=getDateByTimeStr(s);//字符转日期类型
+    var subE=getDateByTimeStr(e);//字符转日期类型
+    if(subD<new Date(currentDateStart.replace(/-/g, '/'))){
+        alert("选择不能小于当前日期哦！");
+    }if(subE<new Date(currentDateStart.replace(/-/g, '/'))){
+        alert("选择不能小于当前日期哦！");
+    }
+    else{
+
     var zs=getDateByTimeStr(s);
     var ze=getDateByTimeStr(e);
-    var date=(ze.getTime()-zs.getTime())/(1000*60*60*24);/*不用考虑闰年否*/
+    var date=(ze.getTime()-zs.getTime())/(1000*60*60*24);/*开始时间和结束时间之差*/
     fHideCalendar();
     //alert("s"+s);
     //alert("时间差："+date);
@@ -206,7 +213,7 @@ function fUpdateCal(iYear,iMonth){
                     }  
                     if(aDates.length == 3 && iYear==aDates[0] && iMonth==aDates[1] && myMonth[w][d]==aDates[2]){  
                         style.color=gcToday;  
-                        parentNode.bgColor='#ffdd66';  
+                        parentNode.bgColor='#ffdd66';
                         parentNode.onmouseover=function(){  
                             this.bgColor='#ffdd66';  
                         };  

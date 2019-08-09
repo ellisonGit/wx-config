@@ -1,52 +1,65 @@
 <!DOCTYPE html>
-<head>
-    <title>订单信息</title>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title> 选项卡</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+        *{padding:0px; margin:0px;}
+        a{ text-decoration:none; color:black;}
+        a:hover{text-decoration:none; color:#336699;}
+        #tab{width:270px; padding:5px;height:150px;margin:20px;}
+        #tab ul{list-style:none; display:;height:30px;line-height:30px; border-bottom:2px #C88 solid;}
+        #tab ul li{background:#FFF;cursor:pointer;float:left;list-style:none height:29px; line-height:29px;padding:0px 10px; margin:0px 10px; border:1px solid #BBB; border-bottom:2px solid #C88;}
+        #tab ul li.on{border-top:2px solid Saddlebrown; border-bottom:2px solid #FFF;}
+        #tab div{height:200px;width:250px; line-height:24px;border-top:none;  padding:1px; border:1px solid #336699;padding:10px;}
+        .hide{display:none;}
+    </style>
 
-    <!-- head 中 -->
-    <link rel="stylesheet" href="css/index.css?id=005">
-    <script type="text/javascript" src="wx/js/jquery-1.8.2.min.js" ></script>
-    <script type="text/javascript" src="js/info.js?id=02"> </script>
+    <script type="text/javascript">
+        // JS实现选项卡切换
+        window.onload = function(){
+            var myTab = document.getElementById("tab");    //整个div
+            var myUl = myTab.getElementsByTagName("ul")[0];//一个节点
+            var myLi = myUl.getElementsByTagName("li");    //数组
+            var myDiv = myTab.getElementsByTagName("div"); //数组
 
+            for(var i = 0; i<myLi.length;i++){
+                myLi[i].index = i;
+                myLi[i].onclick = function(){
+                    for(var j = 0; j < myLi.length; j++){
+                        myLi[j].className="off";
+                        myDiv[j].className = "hide";
+                    }
+                    this.className = "on";
+                    myDiv[this.index].className = "show";
+                }
+            }
+        }
+    </script>
 
 </head>
 <body>
-<form>
-
-
-    <div class="user info">
-
-
-        <div class="tab">
-            <table id="tableFor" class="tabb">
-                <tr>
-                    <th>日期</th>
-                    <th>早餐</th>
-                    <th>中餐</th>
-                    <th>晚餐</th>
-                    <th>宵夜</th>
-                </tr>
-                <tr>
-                    <td><input class="inp" readonly="readonly" id="datetime" value=""/></td>
-                    <td><input type="checkbox" name="can" value="1"/></td>
-                    <td><input type="checkbox" name="can" value="2" /></td>
-                    <td><input type="checkbox" name="can" value="3"/></td>
-                    <td><input type="checkbox" name="can" value="4"/></td>
-                </tr>
-            </table>
-        </div>
-
-
+<!-- HTML页面布局 -->
+<div id = "tab">
+    <ul>
+        <li class="on">测试</li>
+        <li class="off">测试2</li>
+        <li class="off">测试3</li>
+    </ul>
+    <div id="firstPage" class="hide">
+        <a href = "#">测试</a><br/>
 
     </div>
-    <input type="button" onclick="jqchk()" value="更 新"/>
-</form>
+    <div id="secondPage" class="show">
+        <a href = "#">测试2</a><br/>
+
+    </div>
+    <div id="thirdPage" class = "hide">
+        <a href = "#">测试3</a><br/>
+
+    </div>
+</div>
+
 </body>
-<!-- body 最后 -->
-
-<script>
-
-</script>
-
 </html>

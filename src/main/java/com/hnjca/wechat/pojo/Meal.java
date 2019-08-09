@@ -2,6 +2,8 @@ package com.hnjca.wechat.pojo;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * Description:
  * User: Ellison
@@ -15,4 +17,6 @@ public class Meal {
     private String userid;
     private String name;
     private String value;
+    private Date creatime;
+    private Date updatetime;
 }

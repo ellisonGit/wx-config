@@ -11,7 +11,7 @@
     </select>
 
         <update id="updateMeal" parameterType="com.hnjca.wechat.dao.MealDao">
-            update meal set value = #{1} where userid = #{0}
+            update meal set value = #{value}, updatetime=#{updatetime} where userid = #{userid}
         </update>
     <!--
             <select id="selectBySection" parameterType="java.util.Map" resultType="com.hnjca.wechat.pojo.YYTest">
@@ -21,9 +21,9 @@
     <insert id="addMeal" parameterType="com.hnjca.wechat.pojo.Meal">
 
         insert into meal
-          (id,userid,name,value)
+          (id,userid,name,value,creatime)
             values
-          (#{id},#{userid},#{name},#{value})
+          (#{id},#{userid},#{name},#{value},#{creatime})
     </insert>
 
 </mapper>

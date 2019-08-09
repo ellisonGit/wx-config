@@ -9,6 +9,7 @@ import com.hnjca.wechat.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -41,8 +42,8 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public int updateMeal(String userid,String value) {
-        return mealDao.updateMeal(userid,value);
+    public int updateMeal(String userid, String value, Date updatetime) {
+        return mealDao.updateMeal(userid,value,updatetime);
     }
 
 

@@ -14,7 +14,7 @@ public class MyConfig {
 	public static final String SECRET = CommonUtil.get("secret");
 	public static final String TOKEN = CommonUtil.get("token");
 	public static final String APIKEY =CommonUtil.get("apiKey");//支付密钥Key
-	public static final String notify_url = "http://llison.viphk.ngrok.org/api/weixin/wxUpdateOrder";//接收支付信息
+	public static final String notify_url = "http://lllison.viphk.ngrok.org/api/weixin/wxUpdateOrder";//接收支付信息
 
 	// 一卡通平台地址
 	public static final String ICARD_URL = CommonUtil.get("url");

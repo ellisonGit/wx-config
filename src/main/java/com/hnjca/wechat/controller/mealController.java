@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -34,8 +33,8 @@ public class mealController {
      */
     @GetMapping(value = "/order")
     public String Order(  @RequestBody  String paraData)  {
-        JSONArray json = JSONArray.fromObject(paraData);
-        Map<String,String> map = new LinkedHashMap<String, String>();
+        JSONArray json = JSONArray.fromObject(paraData);//将字符串转成json数组
+        Map<String,String> map = new LinkedHashMap<String, String>();//定义map接收处理的数据
         for (Object object : json) {
             JSONObject jsonObject = (JSONObject) object;
             String riqi = (String)jsonObject.get("riqi");
@@ -57,8 +56,9 @@ public class mealController {
         Meal meal=new Meal();
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         meal.setId(uuid);
-        meal.setUserid("1000001");
-        meal.setName("张三");
+        meal.setUserid("1000001");//todo 动态userid
+        meal.setName("张三");//todo 动态name
+        meal.setCreatime(new Date());
         meal.setValue(value);
         int res= mealService.addMeal(meal);
        if(res>0){
@@ -75,7 +75,7 @@ public class mealController {
     @GetMapping(value = "/orderInfo")
     public ArrayList<String> OrderInfo(String userid) throws ParseException {
         ArrayList<String>  strArray = new ArrayList<String>();
-       userid="1000001";
+       userid="1000001";//todo 动态userid
 
         String value=mealService.selectValue(userid);
         if(value==null){
@@ -95,7 +95,6 @@ public class mealController {
                 // System.out.println("日期过期： "+str1);
             }else {
                  //System.out.println("输出：" + str1);*/
-
                  strArray.add(val);
              }
         /*}*/
@@ -127,13 +126,11 @@ public class mealController {
             }
         }
         String value = map.toString().replaceAll("\\{|\\}", "");
-        String userid="1000001";
-        int resutl= mealService.updateMeal(userid,value);
+        String userid="1000001";//todo 动态userid
+        int resutl= mealService.updateMeal( userid,value,new Date());
         if(resutl>0){
             return "1";
         }
-
-
         return "-1";
     }
 }

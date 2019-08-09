@@ -83,7 +83,7 @@ hr {
 .tabb {
     border: 1px solid rgba(116, 107, 128, 0.45);
     width: 100%;
-    height: 10px;
+    height: 10%;
 }
 
 .tabbb {
@@ -111,7 +111,7 @@ td {
 .tab {
     margin-top: 2rem;
     overflow: scroll;
-    height: 80%;
+    height: 300px;
 }
 
 .submit {

@@ -3,6 +3,7 @@ package com.hnjca.wechat.service;
 import com.hnjca.wechat.pojo.Meal;
 import com.hnjca.wechat.pojo.YYTest;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,6 @@ public interface MealService {
 
     String selectValue(String userid);
 
-    int updateMeal(String userid,String value);
+    int updateMeal(String userid, String value, Date updatetime);
 
 }
